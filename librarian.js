@@ -10,20 +10,31 @@ var library = [
 /* Task 1 */
 function getBookTitle( index ){
   //add code
+  return library[index].title;
 }
 
 console.log(getBookTitle(3));
 
 /* Task 3 */
 function addBook( book ){
-  //add code
+  library.push= book;
 }
 
-var newBook = {};
+var newBook = {
+  title:"The Lord of The Rings",
+  year:"1933",
+  author:"J. R. R. Tolkein",
+  publisher:"Noobs"
+};
 console.log(addBook(newBook));
+// console.log(getBookTitle(5));
 
 /* Task 4 */
+
 function bookByAuthor(){
+
+
+
   //add code
 }
 
@@ -31,8 +42,17 @@ console.log(bookByAuthor());
 
 /* Task 5 */
 function findByTitle( title ){
+
+  var pat= new RegExp(title);
   //add code
+  for (var i = 0; i < library.length; i++) {
+    if (library[i].title.match(pat)) {
+
+      return library[i].title;
+
+    }
+  }
 }
 
-console.log(findByTitle("man"));
+console.log(findByTitle("Man"));
 console.log(findByTitle("myth"));
