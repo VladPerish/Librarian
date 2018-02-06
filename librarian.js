@@ -17,7 +17,8 @@ console.log(getBookTitle(3));
 
 /* Task 3 */
 function addBook( book ){
-  library.push= book;
+  library.push(book);
+  return library;
 }
 
 var newBook = {
@@ -32,10 +33,16 @@ console.log(addBook(newBook));
 /* Task 4 */
 
 function bookByAuthor(){
+ library.sort(function(a, b) {
+    var author1 = a.author.toLowerCase(), author2 = b.author.toLowerCase()
 
+    if(author1 < author2) return -1;
 
+    if(author1 > author2) return 1;
 
-  //add code
+    return 0;
+ });
+  return library;
 }
 
 console.log(bookByAuthor());
@@ -55,4 +62,4 @@ function findByTitle( title ){
 }
 
 console.log(findByTitle("Man"));
-console.log(findByTitle("myth"));
+console.log(findByTitle("Myth"));
